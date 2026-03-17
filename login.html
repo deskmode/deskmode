@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - DeskMode</title>
+
+<title>Login - DeskMode Cloud Computing Services</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
@@ -30,32 +31,39 @@ flex-wrap:wrap;
 .logo{
 display:flex;
 align-items:center;
-font-size:20px;
+font-size:22px;
 font-weight:bold;
 }
 
 .logo img{
-width:35px;
-margin-right:8px;
+width:40px;
+margin-right:10px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+font-size:14px;
 }
 
 .container{
-max-width:400px;
-margin:40px auto;
+max-width:420px;
+margin:60px auto;
 padding:20px;
 }
 
 .login-box{
 background:white;
-padding:25px;
+padding:30px;
 border-radius:10px;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
 text-align:center;
 }
 
 .login-box h2{
-margin-bottom:20px;
 color:#1f7a4c;
+margin-bottom:20px;
 }
 
 input{
@@ -69,53 +77,72 @@ border-radius:6px;
 .btn{
 width:100%;
 padding:12px;
-background:#1f7a4c;
-color:white;
 border:none;
 border-radius:6px;
 margin-top:10px;
 font-weight:bold;
+cursor:pointer;
 }
 
-.btn-secondary{
-background:#444;
+.signup{background:#1f7a4c;color:white;}
+.login{background:#444;color:white;}
+
+footer{
+background:#1f7a4c;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+font-size:14px;
 }
 
 @media(max-width:500px){
-.container{
-margin:20px;
-}
+.container{margin:30px 15px;}
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
 <div class="header-container">
+
 <div class="logo">
 <img src="https://res.cloudinary.com/dc5c4kbb0/image/upload/f_auto,q_auto/v1773733254/file_0000000000a071fd9e3969aaf26939b1_lfbizs.png">
 DeskMode
 </div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="rdp.html">RDP</a>
+<a href="live.html">Live</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
 </div>
 </header>
 
 <div class="container">
 
 <div class="login-box">
+
 <h2>Login / Signup</h2>
 
 <input id="email" placeholder="Enter Email">
 <input id="password" type="password" placeholder="Enter Password">
 
-<button class="btn" onclick="signup()">Signup</button>
-<button class="btn btn-secondary" onclick="login()">Login</button>
+<button class="btn signup" onclick="signup()">Signup</button>
+<button class="btn login" onclick="login()">Login</button>
 
 </div>
 
 </div>
+
+<footer>
+<p>© 2026 DeskMode Cloud Computing Services. All Rights Reserved.</p>
+</footer>
 
 <script>
 
