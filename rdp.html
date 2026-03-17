@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -114,7 +114,9 @@ font-size:14px;
 <body>
 
 <header>
-<div><b>DeskMode</b></div>
+<div>
+<b>DeskMode</b>
+</div>
 <div>
 <a href="index.html">Home</a>
 <a href="live.html">Live</a>
@@ -136,7 +138,7 @@ font-size:14px;
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://forms.gle/VT4E7KqKsHhHLrhj6" class="btn" target="_blank">Buy Now</a>
+<a href="https://forms.gle/VT4E7KqKsHhHLrhj6" class="btn" onclick="setPending()">Buy Now</a>
 </div>
 
 <div class="card">
@@ -148,7 +150,7 @@ font-size:14px;
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://forms.gle/7cRxyGd3HW9FSqBW6" class="btn">Buy Now</a>
+<a href="https://forms.gle/7cRxyGd3HW9FSqBW6" class="btn" onclick="setPending()">Buy Now</a>
 </div>
 
 <div class="card">
@@ -160,7 +162,7 @@ font-size:14px;
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://forms.gle/xpPxR2BBr1sKccwg9" class="btn">Buy Now</a>
+<a href="https://forms.gle/xpPxR2BBr1sKccwg9" class="btn" onclick="setPending()">Buy Now</a>
 </div>
 
 <div class="card">
@@ -172,7 +174,7 @@ font-size:14px;
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://forms.gle/JYebiHP6hagWkyww9" class="btn">Buy Now</a>
+<a href="https://forms.gle/JYebiHP6hagWkyww9" class="btn" onclick="setPending()">Buy Now</a>
 </div>
 
 </div>
@@ -181,6 +183,14 @@ font-size:14px;
 <footer>
 © 2026 DeskMode. All Rights Reserved.
 </footer>
+
+<!-- 🔥 PENDING SCRIPT -->
+<script>
+function setPending(){
+  localStorage.setItem("orderStatus", "pending");
+  localStorage.setItem("orderTime", Date.now());
+}
+</script>
 
 </body>
 </html>
