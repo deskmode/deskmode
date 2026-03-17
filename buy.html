@@ -1,50 +1,11 @@
- <script type="module">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test</title>
+</head>
+<body>
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc } 
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-import { getAuth } 
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+<h1>BUY PAGE WORKING ✅</h1>
 
-// ✅ Firebase config (ONLY ONCE)
-const firebaseConfig = {
-  apiKey: "AIzaSyBQqwkPXtsxae2EBvnZ31suresOkLJUBSc",
-  authDomain: "deskmode-987da.firebaseapp.com",
-  projectId: "deskmode-987da",
-  storageBucket: "deskmode-987da.firebasestorage.app",
-  messagingSenderId: "215318493421",
-  appId: "1:215318493421:web:f725eeff8eace165b7b4e4"
-};
-
-// ✅ Initialize
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-
-// ✅ Submit function
-window.submitOrder = async function(){
-
-  const user = auth.currentUser;
-
-  if(!user){
-    alert("Login first");
-    return;
-  }
-
-  const plan = document.getElementById("plan").value;
-  const utr = document.getElementById("utr").value;
-
-  await addDoc(collection(db, "orders"), {
-    email: user.email,
-    plan: plan,
-    utr: utr,
-    status: "pending",
-    time: Date.now()
-  });
-
-  alert("Order Submitted");
-
-  window.location.href = "dashboard.html";
-}
-
- </script>
+</body>
+</html>
