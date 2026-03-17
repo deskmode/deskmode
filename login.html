@@ -4,64 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Login - DeskMode Cloud Computing Services</title>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<title>Login | DeskMode</title>
 
 <style>
-
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 body{background:#f5f5f5;}
 
 header{
 background:#1f7a4c;
 color:white;
-padding:15px 20px;
-}
-
-.header-container{
-max-width:1100px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-}
-
-.logo{
-display:flex;
-align-items:center;
-font-size:22px;
+padding:15px;
+text-align:center;
+font-size:20px;
 font-weight:bold;
 }
 
-.logo img{
-width:40px;
-margin-right:10px;
+nav{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:8px;
+flex-wrap:wrap;
 }
-
 nav a{
 color:white;
 text-decoration:none;
-margin-left:15px;
 font-size:14px;
 }
 
 .container{
-max-width:420px;
-margin:60px auto;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:80vh;
 padding:20px;
 }
 
-.login-box{
+.box{
 background:white;
-padding:30px;
+padding:25px;
+width:100%;
+max-width:350px;
 border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 text-align:center;
 }
 
-.login-box h2{
+.box h2{
 color:#1f7a4c;
 margin-bottom:20px;
 }
@@ -74,14 +63,13 @@ border:1px solid #ccc;
 border-radius:6px;
 }
 
-.btn{
+button{
 width:100%;
 padding:12px;
+margin-top:10px;
 border:none;
 border-radius:6px;
-margin-top:10px;
 font-weight:bold;
-cursor:pointer;
 }
 
 .signup{background:#1f7a4c;color:white;}
@@ -91,28 +79,16 @@ footer{
 background:#1f7a4c;
 color:white;
 text-align:center;
-padding:20px;
-margin-top:40px;
-font-size:14px;
+padding:15px;
+font-size:13px;
 }
-
-@media(max-width:500px){
-.container{margin:30px 15px;}
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="header-container">
-
-<div class="logo">
-<img src="https://res.cloudinary.com/dc5c4kbb0/image/upload/f_auto,q_auto/v1773733254/file_0000000000a071fd9e3969aaf26939b1_lfbizs.png">
 DeskMode
-</div>
-
 <nav>
 <a href="index.html">Home</a>
 <a href="rdp.html">RDP</a>
@@ -120,48 +96,40 @@ DeskMode
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
 </nav>
-
-</div>
 </header>
 
 <div class="container">
-
-<div class="login-box">
+<div class="box">
 
 <h2>Login / Signup</h2>
 
-<input id="email" placeholder="Enter Email">
-<input id="password" type="password" placeholder="Enter Password">
+<input type="email" id="email" placeholder="Enter Email">
+<input type="password" id="password" placeholder="Enter Password">
 
-<button class="btn signup" onclick="signup()">Signup</button>
-<button class="btn login" onclick="login()">Login</button>
+<button class="signup" onclick="signup()">Signup</button>
+<button class="login" onclick="login()">Login</button>
 
 </div>
-
 </div>
 
 <footer>
-<p>© 2026 DeskMode Cloud Computing Services. All Rights Reserved.</p>
+© 2026 DeskMode Cloud Computing Services
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- ✅ IMPORTANT SCRIPT -->
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
 <script>
-
-const SUPABASE_URL = "https://megmdiuvjvpfoungpmgk.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1lZ21kaXV2anZwb2Z1bmdwbWdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3Mjk1OTUsImV4cCI6MjA4OTMwNTU5NX0.Q0pXZlmo9bQzpRReHr_J1KOgLqfJ-8_mfsEyHKx5G5g";
-
-const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const supabaseClient = supabase.createClient(
+"https://megmdiuvjvpfoungpmgk.supabase.co",
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1lZ21kaXV2anZwb2Z1bmdwbWdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3Mjk1OTUsImV4cCI6MjA4OTMwNTU5NX0.Q0pXZlmo9bQzpRReHr_J1KOgLqfJ-8_mfsEyHKx5G5g"
+);
 
 async function signup(){
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-const emailVal = document.getElementById("email").value;
-const passVal = document.getElementById("password").value;
-
-const { data, error } = await client.auth.signUp({
-email: emailVal,
-password: passVal
-});
+const { error } = await supabaseClient.auth.signUp({ email, password });
 
 if(error){
 alert(error.message);
@@ -171,14 +139,10 @@ alert("Signup successful! अब login करो");
 }
 
 async function login(){
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
 
-const emailVal = document.getElementById("email").value;
-const passVal = document.getElementById("password").value;
-
-const { data, error } = await client.auth.signInWithPassword({
-email: emailVal,
-password: passVal
-});
+const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
 
 if(error){
 alert(error.message);
@@ -186,7 +150,6 @@ alert(error.message);
 window.location.href = "dashboard.html";
 }
 }
-
 </script>
 
 </body>
