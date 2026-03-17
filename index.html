@@ -1,12 +1,22 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DeskMode RDP | DeskMode Cloud Computing Services India – Windows RDP & 24/7 Live Streaming Server</title>
+<title>DeskMode RDP | Windows RDP India & Live Streaming Server</title>
 
-<meta name="description" content="DeskMode Cloud Computing Services India offers cheap Windows RDP, Windows VPS Server, cloud computing services and 24/7 live streaming server solutions with instant setup and secure infrastructure.">
+<meta name="description" content="Buy cheap Windows RDP India, VPS server & 24/7 live streaming server. Instant setup, secure login & affordable cloud computing services by DeskMode.">
+
+<meta name="keywords" content="cheap rdp india, buy rdp india, windows vps india, cloud computing india, live streaming server india, 24/7 streaming server, youtube live server, rdp for trading, deskmode rdp">
+
+<meta name="author" content="DeskMode">
+
+<!-- 🔥 OPEN GRAPH -->
+<meta property="og:title" content="DeskMode Cloud Services India">
+<meta property="og:description" content="Affordable Windows RDP & 24/7 Live Streaming Server">
+<meta property="og:type" content="website">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
@@ -37,8 +47,40 @@ nav a{color:white;text-decoration:none;margin-left:15px;font-weight:500;font-siz
 
 .trust{background:#ffffff;text-align:center;padding:40px 20px;}
 
-footer{background:#1f7a4c;color:white;text-align:center;padding:20px;margin-top:40px;font-size:14px;}
+footer{background:#1f7a4c;color:white;padding:30px 20px;margin-top:40px;font-size:14px;}
+
+.footer-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+gap:20px;
+}
+
+.footer-box{
+max-width:250px;
+}
+
+.footer-box h3{
+margin-bottom:10px;
+}
+
+.footer-box a{
+color:white;
+text-decoration:none;
+display:block;
+margin:5px 0;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:20px;
+border-top:1px solid rgba(255,255,255,0.2);
+padding-top:10px;
+}
 </style>
+
 </head>
 
 <body>
@@ -55,12 +97,11 @@ DeskMode
 <a href="index.html">Home</a>
 <a href="rdp.html">RDP</a>
 <a href="live.html">Live</a>
+<a href="orders.html">Orders</a>
 <a href="about.html">About</a>
 <a href="contact.html">Contact</a>
-
 <a href="login.html" id="loginBtn">Login</a>
 <a href="dashboard.html" id="accountBtn" style="display:none;">My Account</a>
-
 </nav>
 
 </div>
@@ -68,7 +109,9 @@ DeskMode
 
 <section class="hero">
 <h1>DeskMode Cloud Computing Services – Windows RDP & 24/7 Live Streaming Server India</h1>
+
 <p>Buy DeskMode RDP, Windows VPS Server and Cloud Streaming Services in India. Fast • Secure • Affordable Cloud Computing Solutions with instant activation.</p>
+
 <p style="font-weight:bold;color:#1f7a4c;">Try Before You Commit – 24 Hour Demo Available</p>
 
 <a href="rdp.html" class="btn">Buy Windows RDP</a>
@@ -86,11 +129,45 @@ DeskMode
 </p>
 </section>
 
+<!-- 🔥 ADVANCED FOOTER -->
 <footer>
-<p>© 2026 DeskMode Cloud Computing Services. All Rights Reserved.</p>
+
+<div class="footer-container">
+
+<div class="footer-box">
+<h3>DeskMode</h3>
+<p>Affordable Windows RDP & Cloud Streaming Services in India. Fast setup & secure servers.</p>
+</div>
+
+<div class="footer-box">
+<h3>Services</h3>
+<a href="rdp.html">Windows RDP</a>
+<a href="live.html">Live Streaming</a>
+<a href="orders.html">My Orders</a>
+</div>
+
+<div class="footer-box">
+<h3>Quick Links</h3>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="login.html">Login</a>
+</div>
+
+<div class="footer-box">
+<h3>Contact</h3>
+<p>Email: deskmodecloud@gmail.com</p>
+<p>India Based Service 🇮🇳</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 DeskMode Cloud Computing Services. All Rights Reserved.
+</div>
+
 </footer>
 
-<!-- 🔥 FIREBASE SCRIPT (BOTTOM FIXED) -->
+<!-- 🔥 FIREBASE LOGIN CHECK -->
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -98,18 +175,14 @@ import { getAuth, onAuthStateChanged }
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBQqwkPXtsxae2EBvnZ31suresOkLJUBSc",
+  apiKey: "AIzaSy...",
   authDomain: "deskmode-987da.firebaseapp.com",
   projectId: "deskmode-987da",
-  storageBucket: "deskmode-987da.firebasestorage.app",
-  messagingSenderId: "215318493421",
-  appId: "1:215318493421:web:f725eeff8eace165b7b4e4"
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// ✅ LOGIN CHECK
 onAuthStateChanged(auth, (user) => {
   if(user){
     document.getElementById("loginBtn").style.display = "none";
