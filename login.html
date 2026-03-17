@@ -116,40 +116,48 @@ DeskMode
 © 2026 DeskMode Cloud Computing Services
 </footer>
 
-<!-- ✅ IMPORTANT SCRIPT -->
-<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<!-- ✅ FIREBASE SCRIPT -->
+<script type="module">
 
-<script>
-const supabaseClient = supabase.createClient(
-"https://megmdiuvjvpfoungpmgk.supabase.co",
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1lZ21kaXV2anZwb2Z1bmdwbWdrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3Mjk1OTUsImV4cCI6MjA4OTMwNTU5NX0.Q0pXZlmo9bQzpRReHr_J1KOgLqfJ-8_mfsEyHKx5G5g"
-);
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-async function signup(){
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
+const firebaseConfig = {
+  apiKey: "AIzaSyBQqwkPXtsxae2EBvnZ31suresOkLJUBSc",
+  authDomain: "deskmode-987da.firebaseapp.com",
+  projectId: "deskmode-987da",
+  storageBucket: "deskmode-987da.firebasestorage.app",
+  messagingSenderId: "215318493421",
+  appId: "1:215318493421:web:f725eeff8eace165b7b4e4"
+};
 
-const { error } = await supabaseClient.auth.signUp({ email, password });
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-if(error){
-alert(error.message);
-}else{
-alert("Signup successful! अब login करो");
+// SIGNUP
+window.signup = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => alert("Signup Successful"))
+    .catch(err => alert(err.message));
 }
+
+// LOGIN
+window.login = function() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      alert("Login Successful");
+      window.location.href = "dashboard.html";
+    })
+    .catch(err => alert(err.message));
 }
 
-async function login(){
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
-
-const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
-
-if(error){
-alert(error.message);
-}else{
-window.location.href = "dashboard.html";
-}
-}
 </script>
 
 </body>
