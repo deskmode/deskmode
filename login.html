@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<title>Login - DeskMode</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{background:#f5f5f5;}
+
+header{background:#1f7a4c;color:white;padding:15px;}
+.logo{font-size:22px;font-weight:bold;}
+
+.container{max-width:400px;margin:80px auto;background:white;padding:30px;border-radius:10px;text-align:center;}
+
+input{width:100%;padding:10px;margin:10px 0;}
+button{padding:10px 20px;background:#1f7a4c;color:white;border:none;border-radius:5px;margin:5px;}
+</style>
+
+</head>
+<body>
+
+<header>
+<div class="logo">DeskMode</div>
+</header>
+
+<div class="container">
+<h2>Login / Signup</h2>
+
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+
+<button onclick="signup()">Signup</button>
+<button onclick="login()">Login</button>
+</div>
+
+<script>
+
+const supabase = supabase.createClient(
+"YOUR_URL",
+"YOUR_KEY"
+);
+
+async function signup(){
+await supabase.auth.signUp({
+email:email.value,
+password:password.value
+});
+alert("Signup Success");
+}
+
+async function login(){
+await supabase.auth.signInWithPassword({
+email:email.value,
+password:password.value
+});
+window.location="dashboard.html";
+}
+
+</script>
+
+</body>
+</html>
