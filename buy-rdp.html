@@ -34,39 +34,75 @@ button{background:#1f7a4c;color:white;padding:10px;border:none;width:100%;}
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-const app = initializeApp({
-  apiKey: "YOUR KEY",
+const firebaseConfig = {
+  apiKey: "AIzaSyBQqwkPXtsxae2EBvnZ31suresOkLJUBSc",
   authDomain: "deskmode-987da.firebaseapp.com",
-  projectId: "deskmode-987da"
-});
+  projectId: "deskmode-987da",
+  storageBucket: "deskmode-987da.firebasestorage.app",
+  messagingSenderId: "215318493421",
+  appId: "1:215318493421:web:f725eeff8eace165b7b4e4"
+};
 
-const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
-window.submitRDP = async function(){
 
-const user = auth.currentUser;
-if(!user){ alert("Login first"); return; }
+// 🔥 STEP 1: URL से plan पकड़ना (TOP में रखना जरूरी)
+const urlParams = new URLSearchParams(window.location.search);
+const selectedPlan = urlParams.get("plan");
 
-const ram = document.getElementById("ram").value;
-const utr = document.getElementById("utr").value;
-
-await addDoc(collection(db, "orders"), {
-  email: user.email,
-  type: "RDP",
-  ram: ram,
-  utr: utr,
-  status: "pending",
-  time: Date.now()
+window.addEventListener("DOMContentLoaded", () => {
+  if(selectedPlan){
+    document.getElementById("ram").value = selectedPlan;
+  }
 });
 
-alert("RDP Order Submitted");
-}
+
+// 🔥 STEP 2: ORDER SUBMIT
+window.placeOrder = async function(){
+
+  const user = auth.currentUser;
+  if(!user){
+    alert("Login first");
+    return;
+  }
+
+  const ram = document.getElementById("ram").value;
+  const utr = document.getElementById("utr").value;
+
+  if(!utr){
+    alert("Enter UTR number");
+    return;
+  }
+
+  await addDoc(collection(db, "orders"), {
+    email: user.email,
+    type: "RDP",
+    ram: ram,
+    utr: utr,
+    status: "pending",
+    time: Date.now()
+  });
+
+  alert("Order Submitted ✅");
+
+};
 
 </script>
+
+// URL से plan पकड़ना
+const urlParams = new URLSearchParams(window.location.search);
+const selectedPlan = urlParams.get("plan");
+
+if(selectedPlan){
+document.getElementById("ram").value = selectedPlan;
+}
+
+  </script>
 
 </body>
 </html>
