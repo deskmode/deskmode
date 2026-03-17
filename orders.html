@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Orders | DeskMode</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f5f5f5;
+}
+
+header{
+background:#1f7a4c;
+color:white;
+padding:15px 20px;
+}
+
+.header-container{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:15px;
+font-size:14px;
+}
+
+.container{
+max-width:900px;
+margin:40px auto;
+padding:20px;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.status{
+font-size:18px;
+margin-top:10px;
+font-weight:bold;
+}
+
+.pending{color:orange;}
+.active{color:green;}
+.rejected{color:red;}
+
+footer{
+background:#1f7a4c;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="header-container">
+<div><b>DeskMode</b></div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="rdp.html">RDP</a>
+<a href="live.html">Live</a>
+<a href="dashboard.html">Dashboard</a>
+</nav>
+</div>
+</header>
+
+<div class="container">
+
+<div class="box">
+
+<h2>Your Order Status</h2>
+
+<p id="noOrder">No Orders Found</p>
+
+<div id="orderBox" style="display:none;">
+
+<p><b>Order:</b> RDP / Live Service</p>
+
+<p class="status" id="statusText"></p>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 DeskMode Cloud Computing Services
+</footer>
+
+<script>
+
+// GET STATUS
+let status = localStorage.getItem("orderStatus");
+
+if(status){
+
+document.getElementById("noOrder").style.display = "none";
+document.getElementById("orderBox").style.display = "block";
+
+let text = document.getElementById("statusText");
+
+// STATUS CHANGE
+if(status === "pending"){
+text.innerHTML = "Pending ⏳";
+text.className = "status pending";
+}
+
+if(status === "active"){
+text.innerHTML = "Active ✅";
+text.className = "status active";
+}
+
+if(status === "rejected"){
+text.innerHTML = "Rejected ❌";
+text.className = "status rejected";
+}
+
+}
+
+</script>
+
+</body>
+</html>
