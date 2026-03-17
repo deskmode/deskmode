@@ -144,36 +144,46 @@ DeskMode
 <p>© 2026 DeskMode Cloud Computing Services. All Rights Reserved.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 
-const supabase = supabase.createClient(
-"https://megmdiuvjvpfoungpmgk.supabase.co",
-"sb_publishable_VrQ-difnH_hYqG8_CYKeNw_BpHyZYVV"
-);
+const SUPABASE_URL = "https://megmdiuvjvpfoungpmgk.supabase.co";
+const SUPABASE_KEY = "sb_publishable_VrQ-difnH_hYqG8_CYKeNw_BpHyZYVV";
+
+const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 async function signup(){
-let { error } = await supabase.auth.signUp({
-email: email.value,
-password: password.value
+
+const emailVal = document.getElementById("email").value;
+const passVal = document.getElementById("password").value;
+
+const { data, error } = await client.auth.signUp({
+email: emailVal,
+password: passVal
 });
 
 if(error){
 alert(error.message);
 }else{
-alert("Signup Success");
+alert("Signup successful! अब login करो");
 }
 }
 
 async function login(){
-let { error } = await supabase.auth.signInWithPassword({
-email: email.value,
-password: password.value
+
+const emailVal = document.getElementById("email").value;
+const passVal = document.getElementById("password").value;
+
+const { data, error } = await client.auth.signInWithPassword({
+email: emailVal,
+password: passVal
 });
 
 if(error){
 alert(error.message);
 }else{
-window.location="dashboard.html";
+window.location.href = "dashboard.html";
 }
 }
 
