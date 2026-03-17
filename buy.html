@@ -1,40 +1,4 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Buy Plan | DeskMode</title>
-
-<style>
-body{font-family:Arial;background:#f5f5f5;}
-.container{max-width:400px;margin:50px auto;background:white;padding:20px;border-radius:10px;text-align:center;}
-input,select{width:100%;padding:10px;margin:10px 0;}
-button{background:#1f7a4c;color:white;padding:10px;border:none;width:100%;}
-</style>
-
-</head>
-<body>
-
-<div class="container">
-
-<h2>Buy Plan</h2>
-
-<select id="plan">
-<option>RDP 4GB</option>
-<option>RDP 8GB</option>
-<option>RDP 16GB</option>
-<option>Live Lite</option>
-<option>Live Prime</option>
-</select>
-
-<input type="text" id="utr" placeholder="Enter UTR Number">
-
-<button onclick="submitOrder()">Submit Order</button>
-
-</div>
-
-<script type="module">
+ <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, addDoc } 
@@ -42,44 +6,45 @@ from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 import { getAuth } 
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-// 🔥 यहाँ अपना Firebase config डालना है
+// ✅ Firebase config (ONLY ONCE)
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_REAL_KEY",
+  apiKey: "AIzaSyBQqwkPXtsxae2EBvnZ31suresOkLJUBSc",
   authDomain: "deskmode-987da.firebaseapp.com",
-  projectId: "deskmode-987da"
+  projectId: "deskmode-987da",
+  storageBucket: "deskmode-987da.firebasestorage.app",
+  messagingSenderId: "215318493421",
+  appId: "1:215318493421:web:f725eeff8eace165b7b4e4"
 };
 
+// ✅ Initialize
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
+// ✅ Submit function
 window.submitOrder = async function(){
 
-const user = auth.currentUser;
+  const user = auth.currentUser;
 
-if(!user){
-alert("Login first");
-return;
+  if(!user){
+    alert("Login first");
+    return;
+  }
+
+  const plan = document.getElementById("plan").value;
+  const utr = document.getElementById("utr").value;
+
+  await addDoc(collection(db, "orders"), {
+    email: user.email,
+    plan: plan,
+    utr: utr,
+    status: "pending",
+    time: Date.now()
+  });
+
+  alert("Order Submitted");
+
+  window.location.href = "dashboard.html";
 }
 
-const plan = document.getElementById("plan").value;
-const utr = document.getElementById("utr").value;
-
-await addDoc(collection(db, "orders"), {
-  email: user.email,
-  plan: plan,
-  utr: utr,
-  status: "pending",
-  time: Date.now()
-});
-
-alert("Order Submitted Successfully");
-
-window.location.href = "dashboard.html";
-
-}
-
-</script>
-
-</body>
-</html>
+ </script>
