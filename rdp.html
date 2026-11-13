@@ -130,75 +130,212 @@ font-size:14px;
 <div class="pricing">
 
 
+
+<div class="pricing">
+
+<style>
+.order-btn{
+display:inline-block;
+width:100%;
+padding:11px;
+margin-top:10px;
+background:#1f7a4c;
+color:white;
+border:0;
+border-radius:5px;
+font-weight:bold;
+cursor:pointer;
+font-size:15px;
+}
+
+.order-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.65);
+z-index:9999;
+justify-content:center;
+align-items:center;
+padding:15px;
+}
+
+.order-modal-box{
+background:white;
+width:100%;
+max-width:340px;
+padding:25px;
+border-radius:12px;
+text-align:center;
+position:relative;
+}
+
+.order-modal-box h2{
+color:#1f7a4c;
+margin-bottom:20px;
+}
+
+.order-options{
+display:flex;
+justify-content:center;
+gap:25px;
+}
+
+.order-option{
+text-decoration:none;
+color:#333;
+font-weight:bold;
+font-size:14px;
+}
+
+.order-option img{
+width:55px;
+height:55px;
+object-fit:contain;
+display:block;
+margin:0 auto 8px;
+}
+
+.close-modal{
+position:absolute;
+right:15px;
+top:10px;
+font-size:25px;
+border:0;
+background:none;
+cursor:pointer;
+}
+</style>
+
+<!-- 2 GB PLAN -->
 <div class="card">
 <h2>2 GB RAM</h2>
-<div class="old-price">₹899</div>
+<div class="old-price">₹1,099</div>
 <div class="new-price">₹649</div>
-<div class="save">28% OFF</div>
+<div class="save">41% OFF</div>
 <div class="features">
 30 GB SSD<br>
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://wa.me/918055829204?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%202GB%0ASSD%3A%2030GB%0APrice%3A%20%E2%82%B9649%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">WhatsApp</a>
-<a href="https://t.me/DeskmodeRdp?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%202GB%0ASSD%3A%2030GB%0APrice%3A%20%E2%82%B9649%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">Telegram</a>
+<button class="order-btn" onclick="openOrder('2GB','30GB','649')">Buy Now</button>
 </div>
 
+<!-- 4 GB PLAN -->
 <div class="card">
 <h2>4 GB RAM</h2>
-<div class="old-price">₹999</div>
+<div class="old-price">₹1,199</div>
 <div class="new-price">₹699</div>
-<div class="save">30% OFF</div>
+<div class="save">42% OFF</div>
 <div class="features">
 64 GB SSD<br>
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://wa.me/918055829204?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%204GB%0ASSD%3A%2064GB%0APrice%3A%20%E2%82%B9699%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">WhatsApp</a>
-<a href="https://t.me/DeskmodeRdp?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%204GB%0ASSD%3A%2064GB%0APrice%3A%20%E2%82%B9699%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">Telegram</a>
+<button class="order-btn" onclick="openOrder('4GB','64GB','699')">Buy Now</button>
 </div>
 
+<!-- 8 GB PLAN -->
 <div class="card">
 <h2>8 GB RAM</h2>
-<div class="old-price">₹1,199</div>
+<div class="old-price">₹1,399</div>
 <div class="new-price">₹799</div>
-<div class="save">33% OFF</div>
+<div class="save">43% OFF</div>
 <div class="features">
 128 GB SSD<br>
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://wa.me/918055829204?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%208GB%0ASSD%3A%20128GB%0APrice%3A%20%E2%82%B9799%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">WhatsApp</a>
-<a href="https://t.me/DeskmodeRdp?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%208GB%0ASSD%3A%20128GB%0APrice%3A%20%E2%82%B9799%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">Telegram</a>
+<button class="order-btn" onclick="openOrder('8GB','128GB','799')">Buy Now</button>
 </div>
 
+<!-- 16 GB PLAN -->
 <div class="card">
 <h2>16 GB RAM</h2>
-<div class="old-price">₹1,399</div>
+<div class="old-price">₹1,599</div>
 <div class="new-price">₹899</div>
-<div class="save">36% OFF</div>
+<div class="save">44% OFF</div>
 <div class="features">
 160 GB SSD<br>
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://wa.me/918055829204?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%2016GB%0ASSD%3A%20160GB%0APrice%3A%20%E2%82%B9899%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">WhatsApp</a>
-<a href="https://t.me/DeskmodeRdp?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%2016GB%0ASSD%3A%20160GB%0APrice%3A%20%E2%82%B9899%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">Telegram</a>
+<button class="order-btn" onclick="openOrder('16GB','160GB','899')">Buy Now</button>
 </div>
 
+<!-- 32 GB PLAN -->
 <div class="card">
 <h2>32 GB RAM</h2>
-<div class="old-price">₹1,899</div>
+<div class="old-price">₹2,399</div>
 <div class="new-price">₹1,399</div>
-<div class="save">26% OFF</div>
+<div class="save">42% OFF</div>
 <div class="features">
 200 GB SSD<br>
 30 Days Validity<br>
 23 Day Replacement Guarantee
 </div>
-<a href="https://wa.me/918055829204?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%2032GB%0ASSD%3A%20200GB%0APrice%3A%20%E2%82%B91%2C399%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">WhatsApp</a>
-<a href="https://t.me/DeskmodeRdp?text=Hello%20DeskMode%2C%20I%20want%20to%20order%20RDP.%0ARAM%3A%2032GB%0ASSD%3A%20200GB%0APrice%3A%20%E2%82%B91%2C399%0AValidity%3A%2030%20Days%0APlease%20share%20payment%20and%20setup%20details." class="btn">Telegram</a>
+<button class="order-btn" onclick="openOrder('32GB','200GB','1399')">Buy Now</button>
 </div>
+
+</div>
+
+<!-- ORDER POPUP -->
+<div class="order-modal" id="orderModal">
+<div class="order-modal-box">
+
+<button class="close-modal" onclick="closeOrder()">×</button>
+
+<h2>Choose Order Method</h2>
+
+<div class="order-options">
+
+<a class="order-option" id="whatsappOrder" href="#" target="_blank" rel="noopener">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdVPKv-nkwVbLMBcs88FSyH-VLjKlqSr_VpqSeisMP9-yA3NkQxmZe4ncvO7m0RGtD_-nZGpFL6jBLYIE3gjAnL4jc92ZhqJZ3OnUTiMpdgeyBetd3A4vnmrVma6ZFz3UtjYHY8qvKqhDdkG8JFo7MteIvLpax_pIiNgrtUUOFKKcxhEkGkxnTxa_gPeDt/s894/166970.png" alt="WhatsApp">
+WhatsApp
+</a>
+
+<a class="order-option" id="telegramOrder" href="#" target="_blank" rel="noopener">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijERQQe1fGmquJjel3sQFGZu_9nVZYyaa-8q-aJB7oeiTBSxJjbzqjnB7wsS3anmLSvSzapoCdoArCUY2qs2IWh1fueXjJxpF45H4n0Z8Ax3a8g3inOP2NyEwm-o1FLaQXuvMWfbU79szu95mCn0esbjVu1KCKbjdowjY0rufxM81cqq3INlmC6ibsI3AD/s752/166971.png" alt="Telegram">
+Telegram
+</a>
+
+</div>
+</div>
+</div>
+
+<script>
+function openOrder(ram,ssd,price){
+
+const message =
+"Hello DeskMode, I want to order RDP.\n\n"+
+"RAM: "+ram+"\n"+
+"SSD: "+ssd+"\n"+
+"Price: ₹"+Number(price).toLocaleString("en-IN")+"\n"+
+"Validity: 30 Days\n"+
+"Replacement Guarantee: 23 Days\n\n"+
+"Please share payment details and RDP setup configuration.";
+
+const encodedMessage = encodeURIComponent(message);
+
+document.getElementById("whatsappOrder").href =
+"https://wa.me/918055829204?text="+encodedMessage;
+
+document.getElementById("telegramOrder").href =
+"https://t.me/DeskmodeRdp?text="+encodedMessage;
+
+document.getElementById("orderModal").style.display="flex";
+}
+
+function closeOrder(){
+document.getElementById("orderModal").style.display="none";
+}
+
+document.getElementById("orderModal").addEventListener("click",function(e){
+if(e.target===this){
+closeOrder();
+}
+});
+</script>
+
 
   
 
