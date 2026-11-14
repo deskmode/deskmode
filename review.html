@@ -18,6 +18,7 @@
     --primary: #217a50;
     --primary-dark: #185e3b;
     --primary-light: #eaf5ee;
+    --white: #ffffff;
     --text: #26352c;
     --muted: #66736b;
     --background: #f5f8f5;
@@ -46,8 +47,10 @@ header {
     background: var(--primary);
     padding: 15px 5%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
     box-shadow: 0 3px 15px rgba(0,0,0,0.12);
 }
 
@@ -73,54 +76,36 @@ nav a:hover {
     color: #d7f3df;
 }
 
-/* MAIN REVIEW AREA */
+/* REVIEW SECTION */
 
-main {
-    width: 100%;
-    padding: 35px 18px 0;
+.review-card {
+    background: white;
+    max-width: 720px;
+    margin: 35px auto 65px;
+    padding: 25px 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.07);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    border: 1px solid #edf1ed;
 }
 
-/* SUBMIT REVIEW */
-
-.submit-section {
-    max-width: 760px;
-    margin: 0 auto 45px;
-    padding: 0;
-    background: transparent;
+.trustpilot-box {
+    max-width: 450px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    background: #f8faf8;
+    border: 1px solid #e6eee7;
+    border-radius: 10px;
 }
 
 #famewall-collection-embed {
     display: block;
     width: 100%;
-    min-height: 540px;
     border: 0;
-    background: transparent;
-}
-
-/* DIVIDER */
-
-.section-divider {
-    max-width: 1100px;
-    height: 1px;
-    margin: 0 auto 45px;
-    background: #e2eae3;
-}
-
-/* PUBLIC REVIEWS */
-
-.public-reviews {
-    max-width: 1150px;
-    width: 100%;
-    margin: 0 auto 65px;
-    padding: 0;
-}
-
-#famewall-wall-of-fame {
-    display: block;
-    width: 100%;
-    min-height: 650px;
-    border: none;
-    background: transparent;
+    min-height: 500px;
 }
 
 /* INFORMATION SECTION */
@@ -239,7 +224,7 @@ footer {
     font-size: 13px;
 }
 
-/* TABLET */
+/* RESPONSIVE DESIGN */
 
 @media(max-width: 850px) {
 
@@ -248,21 +233,21 @@ footer {
         gap: 30px;
     }
 
+    header {
+        justify-content: center;
+    }
+
     nav {
         gap: 17px;
     }
-
-    main {
-        padding-top: 25px;
-    }
 }
-
-/* MOBILE */
 
 @media(max-width: 600px) {
 
     header {
         padding: 13px 12px 17px;
+        flex-direction: column;
+        gap: 15px;
     }
 
     nav {
@@ -273,33 +258,17 @@ footer {
         font-size: 13px;
     }
 
-    main {
-        padding: 18px 10px 0;
+    .review-card {
+        margin: 20px 12px 50px;
+        padding: 15px 10px;
     }
 
-    .submit-section {
-        margin-bottom: 30px;
-    }
-
-    #famewall-collection-embed {
-        min-height: 520px;
-    }
-
-    .section-divider {
-        margin-bottom: 30px;
-    }
-
-    .public-reviews {
-        margin-bottom: 45px;
-    }
-
-    #famewall-wall-of-fame {
-        min-height: 650px;
+    .trustpilot-box {
+        padding: 8px;
     }
 
     .info {
         margin-bottom: 50px;
-        padding: 0 15px;
     }
 
     .info h2 {
@@ -350,6 +319,7 @@ footer {
 <!-- HEADER -->
 
 <header>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="rdp.html">RDP</a>
@@ -357,18 +327,20 @@ footer {
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
     </nav>
+
 </header>
 
 
-<main>
+<!-- FAMEWALL REVIEW COLLECTION -->
 
-    <!-- SUBMIT A REVIEW -->
+<section class="review-card">
 
-    <section class="submit-section">
+    <div class="trustpilot-box">
+
+        <script type="text/javascript" src="https://page.famewall.io/iframeResizer.min.js"></script>
 
         <iframe
             id="famewall-collection-embed"
-            title="Share Your Experience"
             src="https://page.famewall.io/deskmode?widget-embed=1"
             allow="camera;microphone"
             frameborder="0"
@@ -376,49 +348,16 @@ footer {
             width="100%">
         </iframe>
 
-    </section>
+        <script type="text/javascript">
+            iFrameResize(
+                {log: false, checkOrigin: false},
+                "#famewall-collection-embed"
+            );
+        </script>
 
+    </div>
 
-    <!-- SEPARATOR -->
-
-    <div class="section-divider"></div>
-
-
-    <!-- VIEW CUSTOMER REVIEWS -->
-
-    <section class="public-reviews">
-
-        <iframe
-            id="famewall-wall-of-fame"
-            title="DeskMode Customer Reviews"
-            src="https://wall.famewall.io/deskmode?hideNav=true&isEmbed=true"
-            frameborder="0"
-            scrolling="no"
-            width="100%">
-        </iframe>
-
-    </section>
-
-</main>
-
-
-<!-- FAMEWALL IFRAME RESIZER -->
-
-<script type="text/javascript" src="https://embed.famewall.io/iframeResizer.min.js"></script>
-
-<script type="text/javascript">
-
-    iFrameResize(
-        {log: false, checkOrigin: false, heightCalculationMethod: "max"},
-        "#famewall-collection-embed"
-    );
-
-    iFrameResize(
-        {log: false, checkOrigin: false, heightCalculationMethod: "max"},
-        "#famewall-wall-of-fame"
-    );
-
-</script>
+</section>
 
 
 <!-- WHY REVIEWS MATTER -->
@@ -433,33 +372,48 @@ footer {
         overall RDP experience. Every genuine review matters.
     </p>
 
+
     <div class="info-grid">
 
         <div class="info-item">
+
             <div class="icon">⚡</div>
+
             <h3>Better Performance</h3>
+
             <p>
                 Your feedback helps us improve
                 server performance and reliability.
             </p>
+
         </div>
 
+
         <div class="info-item">
+
             <div class="icon">🛡️</div>
+
             <h3>Better Reliability</h3>
+
             <p>
                 We continuously work to provide
                 a better and more reliable experience.
             </p>
+
         </div>
 
+
         <div class="info-item">
+
             <div class="icon">💬</div>
+
             <h3>Customer Support</h3>
+
             <p>
                 Your suggestions help us improve
                 our customer support experience.
             </p>
+
         </div>
 
     </div>
@@ -473,54 +427,84 @@ footer {
 
     <div class="footer-container">
 
+
         <!-- COMPANY -->
 
         <div class="footer-box">
+
             <h3>DeskMode</h3>
+
             <p style="font-size:14px;">
                 Affordable Windows RDP, VPS and cloud
                 streaming services in India with instant
                 setup and secure infrastructure.
             </p>
+
         </div>
 
 
         <!-- SERVICES -->
 
         <div class="footer-box">
+
             <h3>Services</h3>
+
             <a href="rdp.html">Windows RDP</a>
+
             <a href="live.html">Live Streaming Server</a>
+
             <a href="orders.html">My Orders</a>
+
             <a href="dashboard.html">My Account</a>
+
         </div>
 
 
         <!-- COMPANY LINKS -->
 
         <div class="footer-box">
+
             <h3>Company</h3>
+
             <a href="about.html">About Us</a>
+
             <a href="contact.html">Contact Us</a>
+
             <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="terms-and-conditions.html">Terms & Conditions</a>
+
+            <a href="terms-and-conditions.html">
+                Terms & Conditions
+            </a>
+
             <a href="refund-policy.html">Refund Policy</a>
+
             <a href="review.html">Rate Us</a>
+
         </div>
 
 
         <!-- CONTACT -->
 
         <div class="footer-box">
+
             <h3>Contact</h3>
+
             <p style="font-size:14px;">
+
                 📧 deskmodecloud@gmail.com
+
                 <br>
+
                 <a href="contact.html">Contact Us</a>
+
                 📍 India
+
                 <br>
+
             </p>
+
         </div>
+
 
     </div>
 
@@ -528,12 +512,13 @@ footer {
     <!-- COPYRIGHT -->
 
     <div class="footer-bottom">
+
         © 2026 DeskMode Cloud Computing Services.
         All Rights Reserved.
+
     </div>
 
 </footer>
 
 </body>
 </html>
-
