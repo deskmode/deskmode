@@ -47,7 +47,7 @@ header {
     background: var(--primary);
     padding: 15px 5%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
@@ -81,9 +81,8 @@ nav a:hover {
 .review-card {
     background: white;
     max-width: 720px;
-    width: calc(100% - 28px);
     margin: 35px auto 65px;
-    padding: 30px 25px;
+    padding: 25px 25px;
     border-radius: 16px;
     box-shadow: 0 8px 35px rgba(0,0,0,0.07);
     text-align: center;
@@ -93,9 +92,9 @@ nav a:hover {
 }
 
 .trustpilot-box {
-    width: 100%;
     max-width: 450px;
-    margin: 0 auto 28px;
+    width: 100%;
+    margin: 0 auto;
     padding: 15px;
     background: #f8faf8;
     border: 1px solid #e6eee7;
@@ -105,34 +104,8 @@ nav a:hover {
 #famewall-collection-embed {
     display: block;
     width: 100%;
+    border: 0;
     min-height: 500px;
-    border: none;
-}
-
-.review-card p {
-    color: var(--muted);
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.read-review {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 7px;
-    font-weight: bold;
-    font-size: 15px;
-    margin-top: 10px;
-    transition: 0.3s;
-}
-
-.read-review:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(33,122,80,0.2);
 }
 
 /* INFORMATION SECTION */
@@ -260,6 +233,10 @@ footer {
         gap: 30px;
     }
 
+    header {
+        justify-content: center;
+    }
+
     nav {
         gap: 17px;
     }
@@ -282,18 +259,12 @@ footer {
     }
 
     .review-card {
-        margin: 20px 14px 50px;
-        width: auto;
-        padding: 20px 12px;
+        margin: 20px 12px 50px;
+        padding: 15px 10px;
     }
 
     .trustpilot-box {
         padding: 8px;
-        margin-bottom: 22px;
-    }
-
-    #famewall-collection-embed {
-        min-height: 500px;
     }
 
     .info {
@@ -385,17 +356,6 @@ footer {
         </script>
 
     </div>
-
-    <p>
-        Thank you for supporting our services!
-    </p>
-
-    <a class="read-review"
-    href="https://page.famewall.io/deskmode"
-    target="_blank"
-    rel="noopener">
-        Read Customer Reviews →
-    </a>
 
 </section>
 
