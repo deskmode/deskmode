@@ -76,12 +76,12 @@ nav a:hover {
     color: #d7f3df;
 }
 
-/* REVIEW SECTION */
+/* REVIEW COLLECTION SECTION */
 
 .review-card {
     background: white;
     max-width: 720px;
-    margin: 35px auto 65px;
+    margin: 35px auto 40px;
     padding: 25px 25px;
     border-radius: 16px;
     box-shadow: 0 8px 35px rgba(0,0,0,0.07);
@@ -106,6 +106,40 @@ nav a:hover {
     width: 100%;
     border: 0;
     min-height: 500px;
+}
+
+/* CUSTOMER REVIEWS DISPLAY SECTION */
+
+.public-reviews {
+    max-width: 1100px;
+    width: calc(100% - 30px);
+    margin: 0 auto 65px;
+    padding: 30px 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e9efe9;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.05);
+}
+
+.public-reviews h2 {
+    color: var(--primary);
+    font-size: 27px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.public-reviews > p {
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+#famewall-wall-of-fame {
+    display: block;
+    width: 100%;
+    min-height: 500px;
+    border: none;
 }
 
 /* INFORMATION SECTION */
@@ -259,12 +293,22 @@ footer {
     }
 
     .review-card {
-        margin: 20px 12px 50px;
+        margin: 20px 12px 35px;
         padding: 15px 10px;
     }
 
     .trustpilot-box {
         padding: 8px;
+    }
+
+    .public-reviews {
+        width: calc(100% - 24px);
+        padding: 22px 10px;
+        margin-bottom: 45px;
+    }
+
+    .public-reviews h2 {
+        font-size: 23px;
     }
 
     .info {
@@ -331,7 +375,7 @@ footer {
 </header>
 
 
-<!-- FAMEWALL REVIEW COLLECTION -->
+<!-- FAMEWALL REVIEW COLLECTION: SUBMIT REVIEWS -->
 
 <section class="review-card">
 
@@ -358,6 +402,38 @@ footer {
     </div>
 
 </section>
+
+
+<!-- FAMEWALL WALL OF FAME: VIEW PUBLISHED REVIEWS -->
+
+<section class="public-reviews">
+
+    <h2>Customer Reviews</h2>
+
+    <p>
+        See what our customers say about DeskMode Cloud Computing Services.
+    </p>
+
+    <iframe
+        id="famewall-wall-of-fame"
+        title="Wall of Fame"
+        src="https://wall.famewall.io/deskmode?hideNav=true&isEmbed=true"
+        frameborder="0"
+        scrolling="no"
+        width="100%"
+        style="width:100%;border:none;">
+    </iframe>
+
+</section>
+
+<script type="text/javascript" src="https://embed.famewall.io/iframeResizer.min.js"></script>
+
+<script type="text/javascript">
+    iFrameResize(
+        {log: false, checkOrigin: false, heightCalculationMethod: "max"},
+        "#famewall-wall-of-fame"
+    );
+</script>
 
 
 <!-- WHY REVIEWS MATTER -->
