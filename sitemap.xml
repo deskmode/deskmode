@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://deskmode.pages.dev/</loc>
-</url>
+    <url>
+        <loc>https://deskmode.github.io/deskmode/</loc>
+    </url>
 
-<url>
-<loc>https://deskmode.pages.dev/rdp.html</loc>
-</url>
+    <url>
+        <loc>https://deskmode.github.io/deskmode/rdp.html</loc>
+    </url>
 
-<url>
-<loc>https://deskmode.pages.dev/live.html</loc>
-</url>
+    <url>
+        <loc>https://deskmode.github.io/deskmode/live.html</loc>
+    </url>
 
-<url>
-<loc>https://deskmode.pages.dev/about.html</loc>
-</url>
+    <url>
+        <loc>https://deskmode.github.io/deskmode/about.html</loc>
+    </url>
 
-<url>
-<loc>https://deskmode.pages.dev/contact.html</loc>
-</url>
+    <url>
+        <loc>https://deskmode.github.io/deskmode/contact.html</loc>
+    </url>
 
-<url>
-<loc>https://deskmode.pages.dev/privacy-policy.html</loc>
-</url>
+    <url>
+        <loc>https://deskmode.github.io/deskmode/privacy-policy.html</loc>
+    </url>
 
-<url>
-<loc>https://deskmode.pages.dev/terms-and-conditions.html</loc>
-</url>
+    <url>
+        <loc>https://deskmode.github.io/deskmode/terms-and-conditions.html</loc>
+    </url>
 
-<url>
-<loc>https://deskmode.pages.dev/refund-policy.html</loc>
-</url>
+    <url>
+        <loc>https://deskmode.github.io/deskmode/refund-policy.html</loc>
+    </url>
 
 </urlset>
