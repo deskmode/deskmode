@@ -6,35 +6,90 @@
 
 <title>About DeskMode | Cheap RDP India & 24/7 Live Streaming Server Provider</title>
 
-<meta name="description" content="Learn about DeskMode Cloud Computing Services. We provide Cheap Windows RDP in India and 24/7 Live Streaming Servers. Affordable cloud computing solutions for YouTube Live and remote desktop access.">
+<meta name="description" content="Learn about DeskMode Cloud Computing Services, founded by Vishal Kharat in 2024. Affordable Windows RDP in India and 24/7 Live Streaming Servers.">
 
-<meta name="keywords" content="About DeskMode, DeskMode Cloud Computing Services, Cheap RDP India, Buy Windows RDP India, 24/7 Live Streaming Server India, Budget Cloud Services India, Remote Desktop Provider India">
+<meta name="keywords" content="About DeskMode, DeskMode Cloud Computing Services, Cheap RDP India, Buy Windows RDP India, 24/7 Live Streaming Server India, Budget Cloud Services India, Remote Desktop Provider India, Vishal Kharat, DeskMode Founder">
+
+<meta name="author" content="DeskMode Cloud Computing Services">
 
 <link rel="canonical" href="https://deskmode.github.io/deskmode/about.html">
 
+<meta name="theme-color" content="#217A50">
+
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    line-height: 1.6;
+:root {
+    --green: #217A50;
+    --dark-green: #104332;
+    --light-green: #4CA77A;
+    --white: #ffffff;
+    --text: #333333;
+    --light-bg: #f5f8f6;
+    --border: #e3eae5;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* HEADER */
+
 header {
-    background: #1f7a4c;
-    padding: 15px;
-    color: white;
+    background: var(--green);
+    color: var(--white);
+    padding: 15px 5%;
+}
+
+.header-top {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white);
+    font-size: 27px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.brand img {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 23px;
+    padding-top: 13px;
 }
 
 nav a {
-    color: white;
-    margin-left: 20px;
+    color: var(--white);
+    font-size: 16px;
     text-decoration: none;
-    font-weight: bold;
 }
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* CONTENT */
 
 .container {
     max-width: 1000px;
@@ -44,148 +99,319 @@ nav a {
 }
 
 h1, h2 {
-    color: #1f7a4c;
+    color: var(--green);
+    line-height: 1.35;
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 21px;
+    margin: 20px 0 10px;
+    color: var(--dark-green);
+}
+
+p {
+    margin-bottom: 15px;
 }
 
 .section {
     margin-bottom: 40px;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #1f7a4c;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 10px;
+ul {
+    padding-left: 25px;
+    margin-bottom: 18px;
 }
 
-footer {
-    background: #1f7a4c;
+li {
+    margin-bottom: 7px;
+}
+
+/* FOUNDER LINK */
+
+.founder-link {
+    color: var(--green);
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.founder-link:hover {
+    color: var(--dark-green);
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--green);
     color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 8px;
+}
+
+.btn:hover {
+    background: var(--dark-green);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark-green);
+    color: #d2e1d9;
     text-align: center;
-    padding: 20px;
+    padding: 25px 20px;
     margin-top: 40px;
+}
+
+.footer-links {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .footer-links a {
     color: white;
-    margin: 0 10px;
     text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 13px 18px;
+    }
+
+    .header-top {
+        align-items: flex-start;
+    }
+
+    .brand {
+        font-size: 23px;
+    }
+
+    .brand img {
+        width: 48px;
+        height: 48px;
+    }
+
+    nav {
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 30px 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    .btn {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
+<!-- HEADER -->
+<header>
+
     <div class="header-top">
-      <a href="index.html" class="brand">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0rieWbT_e8fJ2z3EP-4V6Z6kFT8NZfNcZtMuMw2sw3U4_xMks2yEda1umgNKb2jg4C6mmN7s_cr47QNplzE3kGG9l5sP0zPRqjdKvcwPLPEnAXF-P2x3VPlSIOmPq4xinzwGgQC5gjUD6KsVvy9JWUFuJqUlyHf6Xy9IvU7m3BClo46eM_8SLPHzBis8c/s1536/63541.png"
-             alt="DeskMode Cloud Computing Services Logo">
-        <span>DeskMode</span>
-      </a>
+        <a href="index.html" class="brand">
+            <img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0rieWbT_e8fJ2z3EP-4V6Z6kFT8NZfNcZtMuMw2sw3U4_xMks2yEda1umgNKb2jg4C6mmN7s_cr47QNplzE3kGG9l5sP0zPRqjdKvcwPLPEnAXF-P2x3VPlSIOmPq4xinzwGgQC5gjUD6KsVvy9JWUFuJqUlyHf6Xy9IvU7m3BClo46eM_8SLPHzBis8c/s1536/63541.png"
+                alt="DeskMode Cloud Computing Services Logo">
+            <span>DeskMode</span>
+        </a>
     </div>
 
     <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="rdp.html">RDP</a>
-      <a href="live.html">Live</a>
-      <a href="about.html">About</a>
-      <a href="founder.html">Founder</a>
-      <a href="contact.html">Contact</a>
-      <a href="login.html">Login</a>
+        <a href="index.html">Home</a>
+        <a href="rdp.html">RDP</a>
+        <a href="live.html">Live</a>
+        <a href="about.html">About</a>
+        <a href="founder.html">Founder</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Login</a>
     </nav>
-  </header>
 
+</header>
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
-<h1>About DeskMode Cloud Computing Services</h1>
+    <h1>About DeskMode Cloud Computing Services</h1>
 
-<div class="section">
-<p>
-DeskMode Cloud Computing Services is an India-based digital cloud startup focused on providing Cheap Windows RDP and 24/7 Live Streaming Servers at affordable prices.
-Our mission is to make cloud computing accessible for individuals, YouTube creators, streamers, developers, and online businesses who need reliable remote desktop and streaming infrastructure without paying high enterprise-level costs.
-</p>
+    <div class="section">
+        <p>
+            DeskMode Cloud Computing Services is an India-based digital cloud startup
+            focused on providing affordable Windows RDP and 24/7 Live Streaming Servers.
+            Our mission is to make cloud computing accessible for individuals,
+            YouTube creators, streamers, developers, and online businesses who need
+            reliable remote desktop and streaming infrastructure without paying
+            high enterprise-level costs.
+        </p>
+    </div>
+
+    <div class="section">
+
+        <h2>Our Mission</h2>
+
+        <p>
+            To provide budget cloud computing solutions in India by offering
+            affordable RDP plans and stable 24/7 Live Streaming Servers with
+            simple activation and transparent policies.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>What We Offer</h2>
+
+        <h3>1. Cheap Windows RDP in India</h3>
+
+        <p>
+            Our Windows-based Remote Desktop Protocol (RDP) plans allow users
+            to access a virtual Windows environment remotely through the internet.
+            These plans are suitable for:
+        </p>
+
+        <ul>
+            <li>YouTube Live Streaming</li>
+            <li>Cloud-based software usage</li>
+            <li>Remote work operations</li>
+            <li>Online automation tasks</li>
+            <li>File management and storage</li>
+        </ul>
+
+        <h3>2. 24/7 Live Streaming Server India</h3>
+
+        <p>
+            DeskMode provides affordable 24/7 streaming servers that allow
+            continuous online streaming without keeping your personal device
+            powered on. This is ideal for:
+        </p>
+
+        <ul>
+            <li>YouTube 24/7 Music Channels</li>
+            <li>Gaming Live Streams</li>
+            <li>Religious or Educational Live Broadcasts</li>
+            <li>Continuous Online Radio Streaming</li>
+        </ul>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Why Choose DeskMode?</h2>
+
+        <ul>
+            <li>Affordable RDP Plans in India</li>
+            <li>Budget 24/7 Live Streaming Infrastructure</li>
+            <li>Simple Manual Activation Process</li>
+            <li>Transparent Terms & Policies</li>
+            <li>Focused on Entry-Level and Budget Users</li>
+        </ul>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Founder</h2>
+
+        <p>
+            DeskMode Cloud Computing Services was founded by
+            <a href="founder.html" class="founder-link">
+                <strong>Vishal Kharat</strong>
+            </a>
+            in 2024 with the goal of creating an affordable alternative to
+            expensive cloud computing services.
+        </p>
+
+        <p>
+            The vision is to build a trusted cloud ecosystem where users can
+            access Windows RDP and streaming infrastructure at competitive pricing.
+            Learn more about our founder, company journey and vision on our
+            <a href="founder.html" class="founder-link">
+                Founder page
+            </a>.
+        </p>
+
+    </div>
+
+    <div class="section">
+
+        <h2>Our Commitment</h2>
+
+        <p>
+            We aim to maintain service stability, secure usage policies, and
+            clear communication with customers. Users are required to follow
+            legal usage guidelines as mentioned in our Terms & Conditions.
+        </p>
+
+        <a href="rdp.html" class="btn">View RDP Plans</a>
+
+        <a href="live.html" class="btn">View Streaming Plans</a>
+
+    </div>
+
 </div>
 
-<div class="section">
-<h2>Our Mission</h2>
-<p>
-To provide Budget Cloud Computing Solutions in India by offering affordable RDP plans and stable 24/7 Live Streaming Servers with simple activation and transparent policies.
-</p>
-</div>
-
-<div class="section">
-<h2>What We Offer</h2>
-
-<h3>1. Cheap Windows RDP in India</h3>
-<p>
-Our Windows-based Remote Desktop Protocol (RDP) plans allow users to access a virtual Windows environment remotely through the internet. These plans are suitable for:
-</p>
-<ul>
-<li>YouTube Live Streaming</li>
-<li>Cloud-based software usage</li>
-<li>Remote work operations</li>
-<li>Online automation tasks</li>
-<li>File management and storage</li>
-</ul>
-
-<h3>2. 24/7 Live Streaming Server India</h3>
-<p>
-DeskMode provides affordable 24/7 streaming servers that allow continuous online streaming without keeping your personal device powered on.
-This is ideal for:
-</p>
-<ul>
-<li>YouTube 24/7 Music Channels</li>
-<li>Gaming Live Streams</li>
-<li>Religious or Educational Live Broadcasts</li>
-<li>Continuous Online Radio Streaming</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Why Choose DeskMode?</h2>
-<ul>
-<li>Affordable RDP Plans India</li>
-<li>Budget 24/7 Live Streaming Infrastructure</li>
-<li>Simple Manual Activation Process</li>
-<li>Transparent Terms & Policies</li>
-<li>Focused on Entry-Level and Budget Users</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Founder</h2>
-<p>
-DeskMode Cloud Computing Services was founded by <strong>Vishal Kharat</strong> with the goal of creating a low-cost alternative to expensive cloud providers.
-The vision is to build a trusted cloud ecosystem where users can access Windows RDP and streaming infrastructure at competitive pricing.
-</p>
-</div>
-
-<div class="section">
-<h2>Our Commitment</h2>
-<p>
-We aim to maintain service stability, secure usage policies, and clear communication with customers.
-Users are required to follow legal usage guidelines as mentioned in our Terms & Conditions.
-</p>
-
-<a href="rdp.html" class="btn">View RDP Plans</a>
-<a href="live.html" class="btn">View Streaming Plans</a>
-</div>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
-<p>© 2026 DeskMode Cloud Computing Services. All Rights Reserved.</p>
-<div class="footer-links">
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="refund-policy.html">Refund Policy</a>
-    <a href="terms-and-conditions.html">Terms & Conditions</a>
-</div>
+
+    <p>
+        © 2026 DeskMode Cloud Computing Services. All Rights Reserved.
+    </p>
+
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="refund-policy.html">Refund Policy</a>
+        <a href="terms-and-conditions.html">Terms & Conditions</a>
+    </div>
+
 </footer>
 
 </body>
